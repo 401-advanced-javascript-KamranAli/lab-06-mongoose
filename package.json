@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watchAll",
-    "lint": "eslint ./js"
+    "lint": "eslint ./"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
   "dependencies": {
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "lint": "^0.7.0",
     "mongoose": "^5.7.1"
   },
   "jest": {
