@@ -16,10 +16,10 @@ app.get('/api/queen', (req, res, next) => {
 
 app.get('/api/queen/:id', (req, res, next) => {
   Queen.findById(req.params.id)
-  .then(queen => {
-    res.json(queen);
-  })
-  .catch(next);
+    .then(queen => {
+      res.json(queen);
+    })
+    .catch(next);
 });
 
 app.post('/api/queen', (req, res, next) => {
