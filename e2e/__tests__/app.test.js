@@ -1,7 +1,7 @@
 const request = require('../request');
 
-describe('core app api', () => {
-  it('is alive', () => {
+describe('app api', () => {
+  it('alive', () => {
     return request
       .get('/hello')
       .expect(200)
@@ -10,18 +10,18 @@ describe('core app api', () => {
       });
   });
 
-  it('returns 404 on non-api bad path', () => {
+  it('return a 404 on nonapi bad request', () => {
     return request
       .get('/bad-path')
       .expect(404)
       .expect('Content-Type', /text/);
   });
 
-  it('returns application/json 404 on bad api path', () => {
+  it('return app/json 404 on bad api path', () => {
     return request
       .post('/api/bad-path')
       .expect(404)
-      .expect('Content-Type', /json/)
+      // .expect('Content-Type, /json/')
       .then(res => {
         expect(res.body.error).toMatch(/not found/i);
       });
