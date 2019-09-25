@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "pretest": "npm run lint",
+    "jest": "jest",
     "test": "jest --verbose",
     "test-watch": "jest --verbose --watchAll",
-    "lint": "eslint ./"
+    "test:verbose": "npm run test -- --verbose",
+    "lint": "eslint .",
+    "start:watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +28,9 @@
     "morgan": "^1.9.1"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "<rootDir>/e2e/setup.js"
+    ]
   }
 }
