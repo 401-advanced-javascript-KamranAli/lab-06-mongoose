@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./lib/models/connect')();
+require('./lib/connect')();
 const express = require('express');
 const app = express();
 const Queen = require('./lib/models/queen');
