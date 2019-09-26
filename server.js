@@ -1,6 +1,8 @@
 require('dotenv').config();
 const app = require('./lib/app');
 
+require('./lib/connect')(process.env.MONGODB_URI);
+
 const { createServer } = require('http');
 const server = createServer(app);
 
